@@ -3,7 +3,7 @@
 
 
 const products = [
-{
+  {
       "image": "slike/sr1.png",
       "productName": "bb",
        "price": 4770.00,
@@ -44,7 +44,6 @@ const products = [
   
 
 ];
-
 
 
 
