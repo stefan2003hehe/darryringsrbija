@@ -2,18 +2,7 @@
 
 
 
-const products = [
-  {
-      "image": "slike/sr1.png",
-      "productName": "bb",
-       "price": 4770.00,
-       "url": "sr1.html?product=bb",
-       "inStock": true
-  }
-  
-  
 
-];
 
 
 
