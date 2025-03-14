@@ -9,36 +9,6 @@ const products = [
        "price": 4770.00,
        "url": "sr1.html?product=bb",
        "inStock": true
-  },
-  {
-      "image": "slike/sr2.png",
-      "productName": "aa",
-      "price": 2990.00,
-       "url": "sr1.html?product=aa",
-       "inStock": false
-  },
-  {
-      "image": "slike/sr3.png",
-      "productName": "cc",
-      "price": 1299.00,
-       "url": "sr1.html?product=cc",
-       "inStock": true
-  }
- ,
-  {
-      "image": "slike/sr4.webp",
-      "productName": "gg",
-      "price": 2912.00,
-       "url": "sr1.html?product=gg",
-       "inStock": false
-  }
-  ,
-  {
-      "image": "slike/sr5.png",
-      "productName": "ff",
-      "price": 999.99,
-       "url": "sr1.html?product=ff",
-       "inStock": true
   }
   
   
