@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles_sr.css">
+
+    <link href="https://fonts.cdnfonts.com/css/fragment-core" rel="stylesheet">
+
+    <title>Darry Ring Srbija</title>
+
+<style>
+.privacy-policy {
+    color: #3a3838;
+    position: relative;
+    left: 34%;
+    width: 37%;
+    top: 30px;
+    height: 660px;
+}
+
+@media (max-width: 768px) {
+  .privacy-policy {
+        color: #3a3838;
+        position: relative;
+        left: 20%;
+        width: 67%;
+        font-size: 40%;
+    }
+}
+
+</style>
+
+
+
+
+
+  </head>
+<body>
+    <header class="header">
+       <div class="navigation"> <div class="logo">Darry Ring Srbija</div>
+        <nav id="hehe">
+            <a href="../index.html">Home</a>
+            <a href="../katalog.html">Katalog</a>
+            
+
+            
+        </nav>
+        </div>
+
+        
+          <div class="header__search"><button class="search_button" onclick="toggleModal()" ></button></div>
+          
+          <a href="korpa.html" class="korpica_container">
+            <button class="korpica_button"></button>
+            <span id="cart-count">0</span>
+          </a>
+
+          <div id="header__more" class="but header__more"><button class="buto more_button" onclick="toggleMore()" ></button></div>
+          <div id="header__more_close" class="but header__more_close"><button class="buto more_close_button" onclick="toggleMoreClose()" ></button></div>
+
+    </header>
+    
+
+  
+    
+    <div class="search-modal" id="searchModal">
+      <div class="search-modal__content" id="contentModal">
+        
+        <form class="form" action="/search" method="get" role="search">
+          <input class="field__input" id="field__input" type="search" name="q" placeholder="Search..." oninput="fetchSuggestions(this.value)"/>
+          <div class="suggestions-box" id="suggestionsBox">
+            <!-- Suggested products će se pojaviti ovde -->
+          </div>
+
+        
+           
+        </form>
+        <button class="modal__close-button" onclick="toggleModal()" > </button>
+      </div>
+    </div>
+     
+      <div class="more__content" id="contentMore">
+        <div class="menu-drawer__navigation-container">
+          <nav class="menu-drawer__navigation">
+           
+               <a  href="../index.html" ><div class="drugiNav">Home</div></a>
+              <a  href="../katalog.html" ><div class="drugiNav Home">Catalog</div></a>
+              
+          </nav>
+     
+          <div class="more__content_lower_part">
+            <a href="http://instagram.com/s" id="instaBtn2"><img src="../slike/instagram_ikonica2.JPG" width="40px" height="40px"></a>
+          </div>
+          
+       
+        </div>
+
+    </div>
+   
+
+
+
+    
+    <div class="privacy-policy">
+      <h1>Politika Kolačića</h1>
+      <p>Na sajtu <strong>DarryRingSrbija</strong> koristimo kolačiće kako bismo poboljšali vaše korisničko iskustvo i osigurali ispravan rad sajta.</p>
+  
+      <h1>1. Šta su kolačići?</h1>
+      <p>Kolačići su male tekstualne datoteke koje se čuvaju na vašem uređaju prilikom posete sajtu.</p>
+  
+      <h1>2. Kako koristimo kolačiće?</h1>
+      <ul>
+          <li><strong>Neophodni kolačići:</strong> Omogućavaju osnovne funkcionalnosti sajta.</li>
+          <li><strong>Analitički kolačići:</strong> Pomažu nam da analiziramo korišćenje sajta radi poboljšanja usluga.</li>
+          <li><strong>Marketinški kolačići:</strong> Koriste se za prilagođavanje reklama vašim interesovanjima.</li>
+      </ul>
+  
+      <h1>3. Upravljanje kolačićima</h1>
+      <p>Možete izbrisati ili blokirati kolačiće putem podešavanja pretraživača. Međutim, blokiranje određenih kolačića može uticati na funkcionalnost sajta.</p>
+  
+      <h1>4. Kontakt</h1>
+      <p>Za više informacija kontaktirajte nas putem e-maila <strong>kontakt@darryringsrbija.rs</strong>.</p>
+  </div>
+
+
+        
+     
+
+
+
+
+<footer>
+
+  <a href="http://instagram.com/s" id="instaBtn"><img src="../slike/insta.JPG" width="40px" height="40px"></a>
+
+  <nav>
+    <p>© 2025, Darry Ring Srbija </p>
+      <a href="pol_priv.html">Politika privatnosti</a>
+      <a href="rekla.html">Reklamacije</a>
+      <a href="uslovi.html">Uslovi korišćenja</a>
+      <a href="pol_isp.html">Politika isporuke</a>
+      <a href="kontakt.html">Kontakt informacije</a>
+      <a href="kolac.html">Kolačići</a>
+  </nav>
+
+</footer>
+  
+  <script>
+  
+       function toggleModal() {
+          const modal = document.getElementById('searchModal');
+          modal.classList.toggle('active');
+        
+          const input = document.getElementById('field__input');
+          field__input.value="";
+        
+        }
+       
+        const more = document.getElementById('contentMore');
+        const moreButton = document.getElementById('header__more');
+        const moreButtonClose =document.getElementById('header__more_close');
+
+        var tempA =0;
+        var tempD =1;
+
+
+        function toggleMore()
+        {
+          moreButton.classList.toggle('active');
+          moreButtonClose.classList.toggle('active');
+         
+          if (tempA==1)  more.classList.toggle('deactive'); 
+
+          more.classList.toggle('active'); 
+          tempA = 1;
+        }
+
+        function toggleMoreClose()
+        {
+          moreButton.classList.toggle('active');
+          moreButtonClose.classList.toggle('active');
+        
+          if (tempA==1)  more.classList.toggle('deactive'); 
+          if (tempA==1) more.classList.toggle('active');
+        }
+
+
+
+
+        function changeValue(step) {
+            let input = document.getElementById("numput");
+            let newValue = parseInt(input.value) + step;
+            
+            // Sprečava da broj ide ispod minimuma (ako postoji)
+            if (input.hasAttribute("min")) {
+                let min = parseInt(input.getAttribute("min"));
+                if (newValue < min) newValue = min;
+            }
+
+            input.value = newValue;
+        }
+
+
+        
+      
+
+
+        
+      </script>
+<script src="../script.js" defer></script>
+</body>
+</html>

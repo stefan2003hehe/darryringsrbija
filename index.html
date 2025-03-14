@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.cdnfonts.com/css/fragment-core" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Darry Ring Srbija</title>
+</head>
+<body>
+    <header class="header">
+       <div class="navigation"> <div class="logo">Darry Ring Srbija</div>
+        <nav id="hehe">
+            <a href="#">Home</a>
+            <a href="katalog.html">Katalog</a>
+            
+
+            
+        </nav>
+        </div>
+
+        
+          <div class="header__search"><button class="search_button" onclick="toggleModal()" ></button></div>
+ 
+          <a href="korpa.html" class="korpica_container">
+            <button class="korpica_button"></button>
+            <span id="cart-count">0</span>
+          </a>
+
+
+
+          <div id="header__more" class="but header__more"><button class="buto more_button" onclick="toggleMore()" ></button></div>
+          <div id="header__more_close" class="but header__more_close"><button class="buto more_close_button" onclick="toggleMoreClose()" ></button></div>
+        
+
+    </header>
+    <section class="hero">
+        <div class="hero-text">
+            mesto gde ćeš pružiti<br>nezaboravan poklon
+        </div>
+    </section>
+
+  
+    
+      <div class="search-modal" id="searchModal">
+        <div class="search-modal__content" id="contentModal">
+          
+          <form class="form" action="/search" method="get" role="search">
+            <input class="field__input" id="field__input" type="search" name="q" placeholder="Search..." oninput="fetchSuggestions(this.value)"/>
+            <div class="suggestions-box" id="suggestionsBox">
+              <!-- Suggested products će se pojaviti ovde -->
+            </div>
+
+           
+             
+          </form>
+          <button class="modal__close-button" onclick="toggleModal()" > </button>
+        </div>
+      </div>
+     
+       
+      
+        <div class="more__content" id="contentMore">
+          <div class="menu-drawer__navigation-container">
+            <nav class="menu-drawer__navigation">
+             
+                 <a  href="/" ><div class="drugiNav Home">Home</div></a>
+                <a  href="katalog.html" ><div class="drugiNav">Catalog</div></a>
+               
+            </nav>
+       
+            <div class="more__content_lower_part">
+              <a href="http://instagram.com/s" id="instaBtn2"><img src="slike/instagram_ikonica2.JPG" width="40px" height="40px"></a>
+            </div>
+            
+         
+          </div>
+
+      </div>
+     
+      
+        
+        
+          
+     
+
+    <div class="NasaKolekcija"> <h1>Nasa kolekcija srebrnih prstenja</h1></div>
+    
+    <section>
+      
+      <div class="slider-container">
+        <button class="slider-btn prev-btn">&lt;</button>
+        <div class="slider">
+          <div class="card">
+            <img src="slike/sr1.png" alt="Ring 1">
+            <h3>Darry Srebrni Prsten</h3>
+            <p>4,770.00 RSD</p>
+          </div>
+          <div class="card">
+            <img src="slike/sr2.png" alt="Ring 2">
+            <h3>Darry Srebrni Prsten</h3>
+            <p>2,990.00 RSD</p>
+          </div>
+          <div class="card">
+            <img src="slike/sr3.png" alt="Ring 3">
+            <h3>Darry Srebrni Prsten</h3>
+            <p>6,164.00 RSD</p>
+          </div>
+          <div class="card">
+            <img src="slike/sr4.png" alt="Ring 4">
+            <h3>Darry Srebrni Prsten</h3>
+            <p>2,912.00 RSD</p>
+          </div>
+          <div class="card">
+            <img src="slike/sr5.png" alt="Ring 5">
+            <h3>Darry Srebrni Prsten</h3>
+            <p>6,278.00 RSD</p>
+          </div>
+          
+        </div>
+        <button class="slider-btn next-btn">&gt;</button>
+      </div>
+</section>
+
+<div class="bibo">
+<div class="NasaKolekcija drugi"> <h1>Nudimo vam prsten vezan za podatke od vaše lične karte tako da ga možete pokloniti SAMO jednoj osobi u vašem životu</h1></div>
+</div>
+
+<section class="hero hero_drugi">
+  <a href="katalog.html"><button class="button">Kolekcija</button></a>
+  <div class="hero-text">
+    LIČNO JEDINSTVENO
+  </div>
+</section>
+
+<div class="bibo drugiOpis">
+  <div class="NasaKolekcija drugi treci"> <h1>U Darry Ring Srbiji,mi pravimo od najkvalitetnijeg srebra i zlata prstenje koje su vezane za broj lične karte tako da možete samo jednom u životu kupiti ovakav prsten</h1></div>
+  </div>
+
+  <div class="about-section">
+    <div class="about-image">
+      <img src="slike/jewelry-natural-3-middle.jpg" alt="O Nama">
+    </div>
+    <div class="about-content">
+      
+      <h2>O Nama</h2>
+      <p>
+        Pokrenuli smo Darry Ring zlataru u nadi da bi smo pomogli ljudima da poklone nešto 
+        originalno svojim partnerima. Dovoljno ozbiljno ali ne i previše kao verenička prstenja.
+      </p>
+      <button class="learn-more-btn">Learn more</button>
+    </div>
+  </div>
+ <br><br><br>
+
+<footer>
+
+  <a href="http://instagram.com/s" id="instaBtn"><img src="slike/insta.JPG" width="40px" height="40px"></a>
+
+  
+  <nav>
+    <p>© 2025, Darry Ring Srbija </p>
+      <a href="footer_stranice/pol_priv.html">Politika privatnosti</a>
+      <a href="footer_stranice/rekla.html">Reklamacije</a>
+      <a href="footer_stranice/uslovi.html">Uslovi korišćenja</a>
+      <a href="footer_stranice/pol_isp.html">Politika isporuke</a>
+      <a href="footer_stranice/kontakt.html">Kontakt informacije</a>
+      <a href="footer_stranice/kolac.html">Kolačići</a>
+  </nav>
+
+</footer>
+  
+  <script>
+        function toggleModal() {
+          const modal = document.getElementById('searchModal');
+          modal.classList.toggle('active');
+        
+          const input = document.getElementById('field__input');
+          field__input.value="";
+        
+        }
+       
+        const more = document.getElementById('contentMore');
+        const moreButton = document.getElementById('header__more');
+        const moreButtonClose =document.getElementById('header__more_close');
+
+        var tempA =0;
+        var tempD =1;
+
+
+        function toggleMore()
+        {
+          moreButton.classList.toggle('active');
+          moreButtonClose.classList.toggle('active');
+         
+          if (tempA==1)  more.classList.toggle('deactive'); 
+
+          more.classList.toggle('active'); 
+          tempA = 1;
+          
+
+        
+
+        }
+
+        function toggleMoreClose()
+        {
+          moreButton.classList.toggle('active');
+          moreButtonClose.classList.toggle('active');
+        
+
+          if (tempA==1)  more.classList.toggle('deactive'); 
+          
+
+          if (tempA==1) more.classList.toggle('active');
+          
+        
+        
+        }
+
+
+
+      </script>
+<script src="script.js"></script>
+</body>
+</html>

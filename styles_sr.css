@@ -1,0 +1,194 @@
+/*OVAJ DEO JE ZA DEKSTOP VIEW ZA SR.HTML za pojedinacne prstenove*/
+.product-container {
+  /* display: flex
+; */
+  align-items: flex-start;
+  gap: 20px;
+  /* max-width: 800px; */
+  margin: auto;
+}
+
+.product-image {
+  width: 800px;
+  height: 800px;
+  position: relative;
+  left: 14%;
+}
+
+.product-image img {
+  width: 800px;
+  height: 800px;
+
+}
+
+
+
+.product-details {
+  flex: 1;
+  width: 369px;
+  height: 405px;
+  position: absolute;
+  margin: 0;
+  top: 20%;
+  left: 67%;
+}
+
+h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.tax-info {
+  font-size: 14px;
+  color: gray;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.quantity-btn {
+  background: #ddd;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+input[type="number"] {
+  width: 50px;
+  text-align: center;
+}
+
+.add-to-cart, .buy-now {
+  display: block;
+  width: 100%;
+  height: 12%;
+  font-size: 22px;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  
+}
+
+.add-to-cart {
+  background: white;
+  border: 1px solid black;
+}
+
+.buy-now {
+  background: black;
+  color: white;
+}
+
+.product-specs {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.product-specs li {
+  font-size: 14px;
+}
+
+.share-link {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: gray;
+}
+
+#product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+.buy-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.buy-btn:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+
+
+/* OVAJ DEO JE ZA PHONE VIEW SR.html*/
+
+@media (max-width: 768px) {
+
+
+  .product-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 0%; 
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+}
+
+h2 {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.add-to-cart {
+  background: white;
+  border: 1px solid black;
+  width: 92%;
+}
+
+
+.product-details {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0;
+  top: 0%;
+  left: 4%;
+}
+
+.ring-size-selector p {
+  font-size: 73%;
+  margin: 0px;
+}
+
+
+.price {
+  font-size: 100%;
+  font-weight: bold;
+}
+
+
+
+}
