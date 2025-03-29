@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles_korpa.css">
 
     <link href="https://fonts.cdnfonts.com/css/fragment-core" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <title>Darry Ring Srbija</title>
 </head>
@@ -80,11 +81,12 @@
     <div id="cart-items"></div>
     
 
-    <div class="cart-buttons">
+    <div class="cart-buttons" id="cart-buttons">
     <p class="cart-summary">Estimated total: <span id="cart-total">0.00 RSD</span></p>
     <button class="checkout-btn"  id="openModal" onclick="checkout()">Check out</button>
-  
-    </div>    
+    
+    </div> 
+    <a href="katalog.html"><button  class="checkout-btn continue-shopping" id="continue-shopping" >Nastavite sa šopingom</button></a>
   </section> 
      
 
@@ -92,7 +94,7 @@
 <div id="checkoutModal" class="modal">
   <div class="modal-content">
       <span class="close">&times;</span>
-      <h2>Unesi podatke za porudžbinu</h2>
+      <h2>Unesite podatke za porudžbinu</h2>
 
       <div id="checkoutItems"></div> <!-- Ovdje će se ubacivati proizvodi iz korpe -->
 
@@ -100,23 +102,54 @@
 
    
     <form id="orderForm">
-    <label>Ime *</label>
-    <input type="text" name="ime" required>
+    <label for="ime">Ime <span class="required">*</span></label>
+    
+    <div class="input-group">
+      <span class="icon">
+          <i class="fas fa-user"></i> <!-- FontAwesome ikonica -->
+      </span>
+      <input type="text" id="ime" placeholder="Vaše ime" required>
+    </div>
+    
 
-    <label>Prezime *</label>
-    <input type="text" name="prezime" required>
+    <label for="ime">Prezime <span class="required">*</span></label>
+     
+    <div class="input-group">
+      <span class="icon">
+          <i class="fas fa-user"></i> <!-- FontAwesome ikonica -->
+      </span>
+      <input type="text" id="prezime" placeholder="Vaše Prezime" required>
+    </div>
 
-    <label>Broj mobilnog telefona *</label>
-    <input type="text" name="telefon" required>
+    <label for="ime">Broj mobilnog telefona <span class="required">*</span></label>
+     
+    <div class="input-group">
+      <span class="icon">
+          <i class="fas fa-phone"></i> <!-- FontAwesome ikonica -->
+      </span>
+      <input type="text" id="telefon" placeholder="Vaše broj telefona" required>
+    </div>
 
-    <label>Grad *</label>
-    <input type="text" name="grad" required>
+    <label for="ime">Grad <span class="required">*</span></label>
+     
+    <div class="input-group">
+      <span class="icon">
+          <i class="fas fa-location-dot"></i> <!-- FontAwesome ikonica -->
+      </span>
+      <input type="text" id="grad" placeholder="Vaše mesto stanovanja" required>
+    </div>
 
-    <label>Ulica i broj *</label>
-    <input type="text" name="adresa" required>
+    <label for="ime">Ulica i broj <span class="required">*</span></label>
+     
+    <div class="input-group">
+      <span class="icon">
+          <i class="fas fa-location-dot"></i> <!-- FontAwesome ikonica -->
+      </span>
+      <input type="text" id="ulica" placeholder="Vaše ulica i broj" required>
+    </div>
 
     <p id="totalPrice"><strong></strong></p>
-    <button type="submit">Potvrdi porudžbinu</button>
+    <button class="confirm-button" type="submit">Potvrdi porudžbinu</button>
 </form>
 
     
@@ -140,7 +173,8 @@
   </nav>
 
 </footer>
-  
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
   
        function toggleModal() {
@@ -181,10 +215,60 @@
         }
 
 
+  //////////////////////////////////////////////////////////////////////////////////////////
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    emailjs.init("Q2v33nzqBM2C8eHF6");
 
+    document.getElementById("orderForm").addEventListener("submit", function(event) {
+        event.preventDefault();  // Sprečava refresh
+        console.log("Submit event prevented!"); // Provera u konzoli
 
+        let formData = {
+            name: document.getElementById("ime").value,
+            surname: document.getElementById("prezime").value,
+            phone: document.getElementById("telefon").value,
+            city: document.getElementById("grad").value,
+            address: document.getElementById("ulica").value,
+        };
 
+        let products = [];
+        document.querySelectorAll(".checkout-info").forEach(product => {
+            products.push({
+                name: product.getAttribute("data-name"),
+                size: product.getAttribute("data-size"),
+                price: product.getAttribute("data-price"),
+                quantity: product.getAttribute("data-quantity")
+            });
+        });
 
+        let productTable = "<table border='1' cellspacing='0' cellpadding='5'>";
+        productTable += "<tr><th>Naziv</th><th>Veličina</th><th>Cena</th><th>Količina</th></tr>";
+        products.forEach(p => {
+            productTable += `<tr>
+                <td>${p.name}</td>
+                <td>${p.size}</td>
+                <td>${p.price}</td>
+                <td>${p.quantity}</td>
+            </tr>`;
+        });
+        productTable += "</table>";
+
+        emailjs.send("service_m2sakc4", "template_f1k5fs7", {
+            ...formData,
+            product_list: productTable
+        }, "Q2v33nzqBM2C8eHF6")
+        .then(response => {
+            alert("Porudžbina poslata!");
+            console.log("Porudžbina poslata!", response);
+        }).catch(error => {
+            alert("Greška pri slanju: " + JSON.stringify(error));
+            console.log("Greška pri slanju:", error);
+        });
+
+        return false;  // Sprečava refresh na starim browserima
+    });
+});
 
         
       
@@ -192,6 +276,7 @@
 
         
       </script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>      
 <script src="script.js" defer></script>
 <script src="script_korpa.js" defer></script>
 </body>

@@ -1,3 +1,27 @@
+
+@font-face {
+  font-family: 'Elegant';
+  src: url('fonts/Elegant.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Baskervville';
+  src: url('fonts/Baskervville-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+
+
 input {
  border-style: none;
 }
@@ -13,7 +37,7 @@ textarea {
 
 html,body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
    /* overflow-x:hidden; */
 }
 
@@ -27,6 +51,7 @@ html,body {
     height: 45px;
     position: sticky; top: 0;z-index: 5;
     z-index: 12;
+    font-family:'Elegant';
 }
 
 .header .logo {
@@ -150,10 +175,10 @@ padding-top: 12px;
     left: 10%;
     color: white;
     font-size: 4rem;
-    font-weight: bold;
+    
     line-height: 1.5;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    font-family: 'Fragment Core', sans-serif;
+    font-family: 'Baskervville';
 
 }
 
@@ -243,6 +268,7 @@ padding-top: 12px;
     top: 5px;
     position: relative;
     color: white;
+    font-family: 'Montserrat';
   }
 
   .field__button {
@@ -361,7 +387,7 @@ padding-top: 12px;
   .NasaKolekcija h1 
   {
  font-size: 39px;
- font-family:'Fragment Core', sans-serif;
+ font-family: 'Baskervville';
 left: 140px;
 position: relative;
   }
@@ -787,7 +813,7 @@ nav a:hover {
 @media (max-width: 768px) {
   html,body {
     font-size: 30px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -835,13 +861,13 @@ display: none;
   .hero .hero-text {
       position: absolute;
       bottom: 20%;
-      left: 10%;
+      left: 8%;
       color: white;
       font-size: 4vh;
-      font-weight: bold;
+      
       line-height: 1.5;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-      font-family: 'Fragment Core', sans-serif;
+      font-family: 'Baskervville';
   }
 }
 
@@ -909,9 +935,10 @@ display: none;
 @media (max-width: 768px) {
   .NasaKolekcija h1 {
       font-size: 4vh;
-      font-family: 'Fragment Core', sans-serif;
+      font-family: 'Baskervville';
       left: 0%;
       position: relative;
+      font-weight: 400;
   }
 }
 
@@ -1058,7 +1085,7 @@ display: none;
 
 @media (max-width: 768px) {
   .field__input {
-      width: 70%;
+    width: 95%;
       /* padding: 10px; */
       margin-bottom: 10px;
       background-color: #252526;
@@ -1072,6 +1099,7 @@ display: none;
       position: relative;
       color: white;
       /* margin-left: -20%; */
+      font-family: 'Montserrat';
   }}
 
   @media (max-width: 768px) {
@@ -1287,7 +1315,7 @@ display: flex;
 
 @media (max-width: 768px) {
   .menu-drawer__navigation-container nav {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }}
   
 

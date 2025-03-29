@@ -1,3 +1,7 @@
+
+
+
+
 const products = [
   {
       "image": "slike/sr1.png",
@@ -40,9 +44,6 @@ const products = [
   
 
 ];
-
-
-
 
 
 
