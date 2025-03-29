@@ -135,3 +135,69 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // /////////////////////////////// SLANJE NA EMAIL DEO ///////////////////////////////////////////
 
+document.addEventListener("DOMContentLoaded", function() {
+    emailjs.init("Q2v33nzqBM2C8eHF6");
+
+    document.getElementById("orderForm").addEventListener("submit", function(event) {
+        event.preventDefault();  // Sprečava refresh
+        console.log("Submit event prevented!"); // Provera u konzoli
+
+        let formData = {
+            name: document.getElementById("ime").value,
+            surname: document.getElementById("prezime").value,
+            phone: document.getElementById("telefon").value,
+            city: document.getElementById("grad").value,
+            address: document.getElementById("ulica").value,
+        };
+
+        let products = [];
+        document.querySelectorAll(".checkout-info").forEach(product => {
+            products.push({
+                name: product.getAttribute("data-name"),
+                size: product.getAttribute("data-size"),
+                price: product.getAttribute("data-price"),
+                quantity: product.getAttribute("data-quantity")
+            });
+        });
+
+        let productTable = "<table border='1' cellspacing='0' cellpadding='5'>";
+        productTable += "<tr><th>Naziv</th><th>Veličina</th><th>Cena</th><th>Količina</th></tr>";
+        products.forEach(p => {
+            productTable += `<tr>
+                <td>${p.name}</td>
+                <td>${p.size}</td>
+                <td>${p.price}</td>
+                <td>${p.quantity}</td>
+            </tr>`;
+        });
+        productTable += "</table>";
+
+        emailjs.send("service_m2sakc4", "template_f1k5fs7", {
+            ...formData,
+            product_list: productTable
+        }, "Q2v33nzqBM2C8eHF6")
+        .then(response => {
+            
+            console.log("Porudžbina poslata!", response);
+
+              // ✅ 1. Zatvaranje checkout prozora
+        document.getElementById("checkoutModal").style.display = "none";
+
+       // ✅ 2. Prikazivanje zahvalnog prozora
+        document.getElementById("thankYouModal").style.display = "grid";
+        
+
+
+        }).catch(error => {
+            alert("Greška pri slanju: " + JSON.stringify(error));
+            console.log("Greška pri slanju:", error);
+        });
+
+        return false;  // Sprečava refresh na starim browserima
+    });
+});
+
+document.getElementById("closeThankYou").onclick = function () {
+    document.getElementById("thankYouModal").style.display = "none";
+    clearCart();
+};
