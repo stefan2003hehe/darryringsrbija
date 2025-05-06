@@ -1,4 +1,8 @@
 /*OVAJ DEO JE ZA DEKSTOP VIEW ZA SR.HTML za pojedinacne prstenove*/
+body{
+  overflow-x: hidden;
+}
+
 .product-container {
   /* display: flex
 ; */
@@ -139,6 +143,41 @@ input[type="number"] {
 
 
 
+.popupi {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background-color: #252525;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    position: fixed;
+    top: 65px;
+    right: 20px;
+    z-index: 1000;
+    pointer-events: none;
+    display: flex;
+}
+
+
+
+
+.popupi img {
+  width: 118px;
+  height: 98px;
+}
+
+.popupi p {
+  position: relative;
+  height: 20px;
+  top: 18px;
+  margin-right: 20px;
+}
+
+.popupi.show {
+  opacity: 1;
+}
+
+
 /* OVAJ DEO JE ZA PHONE VIEW SR.html*/
 
 @media (max-width: 768px) {
@@ -188,6 +227,68 @@ h2 {
   font-size: 100%;
   font-weight: bold;
 }
+
+
+.popupi {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background-color: #252525;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  position: fixed;
+  top: 10%;
+  width: 57%;
+  height: 6%;
+  right: 0px;
+  z-index: 1000;
+  pointer-events: none;
+  display: flex
+;
+}
+
+
+
+
+
+    .popupi img {
+        width: 30%;
+        height: 116%;
+        top: -10%;
+        left: -2%;
+        position: relative;
+    }
+
+    .popupi p {
+      position: absolute;
+      height: 20px;
+      font-size: 2vh;
+      margin-right: 20px;
+      top: 1%;
+      left: 32%;
+  }
+
+.popupi.show {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

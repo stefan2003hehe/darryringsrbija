@@ -72,7 +72,12 @@ window.onload = () => {
       const productContainer = document.getElementById("product-container-1");
 
       productContainer.innerHTML = `
-          <div class="product-image">
+       <div id="popupi" class="popupi">
+       <img src="${selectedProduct.image}" alt="${selectedProduct.productName}">
+       <p>${selectedProduct.productName} je dodat u korpu.</p>
+       </div>
+         
+       <div class="product-image">
               <img src="${selectedProduct.image}" alt="${selectedProduct.productName}">
           </div>
           <div class="product-details">
@@ -95,7 +100,7 @@ window.onload = () => {
                   </div>
               </div>
 
-              <button onclick="addToCartFromPage()" class="add-to-cart" ${!selectedProduct.inStock ? 'disabled' : ''}>
+              <button onclick="addToCartFromPage();showPopup()"  class="add-to-cart" ${!selectedProduct.inStock ? 'disabled' : ''}>
                   ${selectedProduct.inStock ? "Add to cart" : "Out of Stock"}
               </button>
 

@@ -17,7 +17,7 @@
 @font-face {
   font-family: 'Baskervville';
   src: url('fonts/Baskervville-Regular.ttf') format('truetype');
-  font-weight: 400;
+  font-weight: normal;
 }
 
 
@@ -97,6 +97,7 @@ html,body {
   align-items: center;
   justify-content: center;
   visibility: hidden; /* Sakrij ako je 0 */
+  font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -216,7 +217,7 @@ padding-top: 12px;
 .search-modal__content {
   background: #252525;
   padding: 20px;
-  width: 1850px;
+  width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
   text-align: center;
@@ -241,8 +242,8 @@ padding-top: 12px;
 
 
   .form{
-    width: 750px;
-    left: 579px;
+    width: 792px;
+    left: 623px;
     position: relative;
     
    
@@ -292,7 +293,7 @@ padding-top: 12px;
     position: absolute;
     top: 30px;
 
-    right: 490px;
+    right: 634px;
     background: none;
     border: none;
     font-size: 20px;
@@ -384,13 +385,13 @@ padding-top: 12px;
 
 
 
-  .NasaKolekcija h1 
-  {
- font-size: 39px;
- font-family: 'Baskervville';
-left: 140px;
-position: relative;
-  }
+  .NasaKolekcija h1 {
+    font-size: 39px;
+    font-family: 'Baskervville';
+    left: 140px;
+    position: relative;
+    font-weight: 500;
+}
 
 .drugi {
   background-color: #f7f7f7;
@@ -434,6 +435,15 @@ position: relative;
   transition: transform 0.4s ease-in-out;
 }
 
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+
+
 .card {
   flex: 0 0 25%; /* Prikaz 4 kartice */
   text-align: center;
@@ -445,7 +455,7 @@ position: relative;
 }
 
 
-.card img {
+ .card  img {
   max-width: 100%;
   border-radius: 8px;
   transition: transform 0.3s ease; /* Glatka tranzicija za efekat */
@@ -493,7 +503,7 @@ position: relative;
   background-color: white;
   color: black;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 27px;
   text-align: center;
   border: none;
   border-radius: 10px;
@@ -503,8 +513,9 @@ position: relative;
   left: 10%;
   top: 80%;
   position: relative;
-  width: 100px;
-  height: 40px;
+  width: 152px;
+  height: 59px;
+  font-family: 'Montserrat';
 }
 
 .button:hover {
@@ -537,7 +548,7 @@ position: relative;
   max-width: 1200px; /* Maksimalna širina sekcije */
   height: 400px;
   position: relative;
-  left: 18%;
+  left: 21%;
 }
 
 .about-image {
@@ -596,7 +607,7 @@ footer {
 footer nav {
   position: absolute;
   margin-top: 175px;
-  left: 25%;
+  left: 26%;
   /* top: -4%; */
   display: flex
 ;
@@ -639,6 +650,25 @@ nav a:hover {
 }
 }
 
+
+.popup {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.popup.show {
+  visibility: visible;
+  opacity: 1;
+}
 
 
 
@@ -717,11 +747,12 @@ nav a:hover {
 }
 
 .product-item img {
-  
   margin-bottom: 10px;
   transition: transform 0.3s ease;
-  height:  382px;
-  width: 377px;
+  height: 382px;
+  width: 460px;
+  left: -36px;
+  position: relative;
 }
 
 .product-item img:hover {
@@ -809,6 +840,32 @@ nav a:hover {
 
 
 /*!!!!!!!!!!!!!!!!!!!!   OVAJ DEOS ISPOD JE SPECIFICNO ZA index.hhtml PHONE VIEW !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+@media (max-width: 768px) {
+.button {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  font-size: 60%;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  left: 10%;
+  top: 80%;
+  position: relative;
+  width: 40%;
+  height: 15%;
+  font-family: 'Montserrat';
+}
+}
+
+
+
+
+
 
 @media (max-width: 768px) {
   html,body {
@@ -886,6 +943,7 @@ display: none;
 .header nav {
   display: flex;
   margin-left: 25px;
+  font-family: 'Montserrat';
 
 }
 
@@ -1406,6 +1464,27 @@ display: flex;
       scrollbar-width: none;
   }
 }
+
+
+@media screen and (max-width: 480px) {
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  width: 15%;
+        height: 10%;
+        font-size: 8vw;
+}
+}
+
 
 
 @media screen and (max-width: 480px) {
@@ -1984,7 +2063,7 @@ width: 100%;
   height: 95%;
   width: 108%;
   top: -15%;
-  left: 0%;
+  left: -5%;
   position: relative;
 }
 

@@ -4,7 +4,7 @@
 
 
 .mains-ection {
-  min-height: 566px;
+  min-height: 720px;
 }
 
 
@@ -20,12 +20,36 @@ h1 {
 }
 
 .your-cart {
-  font-size: 37px;
+  font-size: 53px;
   font-weight: bold;
   position: relative;
   left: 13%;
   top: 7%;
 }
+
+@media (min-width: 769px)
+{
+.prazna {
+  left: 37%;
+  top: 164px;
+  font-size: 41px;
+  position: relative;
+}
+}
+
+@media (min-width: 769px)
+{
+  #continue-shopping {
+    position: relative;
+    top: 176px;
+    left: 41.5%;
+    height: 59px;
+    font-size: 27px;
+    font-family: 'Montserrat';
+}
+}
+
+
 
 #cart-items {
   top: 30%;
@@ -138,6 +162,7 @@ h1 {
   top: 44%;
   height: 40px;
   width: 40px;
+  cursor: pointer;
 }
 
 
@@ -146,6 +171,7 @@ h1 {
   background: url(slike/kanta.JPG) no-repeat center center / cover;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 
@@ -198,11 +224,253 @@ footer {
   width: 100%;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  font-size: 50%;
+  overflow: hidden;
+}
+
+.modal-content
+
+ {
+    background: white;
+    margin: 10% auto;
+    padding: 20px;
+    top: -12%;
+    width: 62%;
+    margin-left: 19%;
+    /* margin: 1%; */
+    border-radius: 5px;
+    position: absolute;
+    border: solid 1px black;
+    max-height: 83vh;
+    overflow: auto;
+    display: flex;
+    height: 80%;
+    overflow-x: hidden;
+}
+
+.close {
+  float: right;
+  font-size: 59px;
+  cursor: pointer;
+  position: absolute;
+  right: 3%;
+  z-index: 1000;
+}
+    
+    .modal-content h2{
+      font-size: 42px;
+    margin-bottom: 10px;
+    position: absolute;
+    left: 26%;
+    }
+    
+    
+    
+    #checkoutItems{
+    
+    
+    }
+    
+    .checkout-item {
+      border-bottom: 1px solid #c7c7c7;
+      height: 15vh;
+      margin: 1%;
+      width: 114%;
+      position: relative;
+      top: 17%;
+  }
+    
+    .checkout-item img{
+    position: relative;
+    width: 30%;
+    top: -0.8vh;
+    }
+    
+    
+    .checkout-info {
+      position: absolute;
+      left: 35%;
+      top: 7%;
+      font-size: 295%;
+  }
+    .checkout-info h3{
+      margin-top: 0;
+      margin-bottom: 0;
+      }
+    
+      .checkout-info p{
+        margin-top: 0;
+      margin-bottom: 0;
+        }
+    
+        .checkout-info span{
+          margin-top: 0;
+      margin-bottom: 0;
+          }
+       
+    
+    
+    .checkout-item-price{
+    
+    }
+    
+    .checkout-item-price span{
+    
+    }
+    
+    
+    #orderForm {
+      display: grid
+  ;
+      align-items: center;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      padding: 73px;
+      width: 70%;
+      position: relative;
+      top: 31px;
+      left: 8%;
+  }
+    
+  #orderForm input {
+    font-family: 'Montserrat';
+    width: 100%;
+    padding: 8px;
+    border: none;
+    /* outline: aqua; */
+    font-size: 301%;
+    height: 10px;
+    top: 0px;
+    left: -10px;
+}
+    
+    #orderForm label {
+      font-weight: bold;
+      font-size: 25px;
+  }
+    
+    .required {
+      color: red;
+    }
+    
+    .icon {
+        background: #eee;
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 1px solid #ccc;
+    }
+    
+    
+    .input-group {
+      display: flex
+  ;
+      align-items: center;
+      border: 1px solid #c7c7c7;
+      padding: 0px;
+      border-radius: 4px;
+      margin: 0;
+      margin-top: -5%;
+      margin-bottom: -4%;
+      width: 91%;
+      height: 4.1vh;
+  }
+    
+    
+    
+    
+    /* Stil za input */
+    .input-group input {
+        border: none;
+        padding: 10px;
+        flex: 1;
+        font-size: 14px;
+        outline: none;
+    }
+    
+    .input-group span {
+      margin-right: 5px;
+      font-size: 360%;
+      top: auto;
+      height: 59%;
+      width: 4%;
+  }
+    
+    
+    
+    
+    /* Stil za placeholder */
+    .input-group input::placeholder {
+        color: #999;
+    }
+    
+    /* Hover i fokus efekti */
+    .input-group:focus-within {
+        border-color: black;
+    }
+    
+    .ukupna-cena {
+      top: 70%;
+      position: relative;
+      display: flex
+  ;
+      font-size: 412%;
+      left: -107%;
+      width: 92%;
+  }
+    
+    #totalPrice
+    {
+      font-weight: bold;
+      margin-left: 25%;
+      
+    }
+    
+    
+    
+    
+    /* Dugme za potvrdu */
+    .confirm-button {
+      left: 6px;
+      top: -10px;
+      height: 75%;
+      width: 90%;
+      padding: 10px;
+      background: black;
+      color: white;
+      font-size: 26px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Montserrat';
+      position: relative;
+  }
+    
+    .confirm-button:hover {
+      background: #333;
+    }
+
+
+
+
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////OVAJ DEO ISPOD JE ZA PHONE VIEW KORPA.HTML//////////////////////////////////////////////////////////////////////*/
 
 
 @media (max-width: 768px) {
+
+
 
 
 
@@ -542,14 +810,14 @@ align-items: center;
   position: relative;
   display: flex  ;
   font-size: 5vw;
-
+   
 }
 
 #totalPrice
 {
   font-weight: bold;
   margin-left: 25%;
-  font
+  
 }
 
 
